@@ -3,8 +3,8 @@ import smtplib
 from email.message import EmailMessage
 
 # Usuario y contraseña
-user_gmail = os.env('USER_GMAIL')
-password_gmail = os.env('PASSWORD_GMAIL')
+user_gmail = os.getenv('USER_GMAIL')
+password_gmail = os.getenv('PASSWORD_GMAIL')
 
 def send_notifying_mail(mail_user: str = "", mail_password: str = "") -> None:
   msg = EmailMessage()
@@ -29,4 +29,4 @@ def send_notifying_mail(mail_user: str = "", mail_password: str = "") -> None:
 send_notifying_mail(user_gmail, password_gmail)
 
   if __name__ == "__main__":
-      enviar_mail(user_gmail, password_gmail) # modificar segun se llame tu funcion y parametros
+      send_notifying_mail(user_gmail, password_gmail) # modificar segun se llame tu funcion y parametros
